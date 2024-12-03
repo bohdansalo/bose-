@@ -1,0 +1,22 @@
+.con:hover {
+  color: red;
+  transition-duration: 250ms;
+}
+summary {
+  display: flex;
+  align-items: center;
+}
+
+summary::marker {
+  display: none;
+}
+
+summary::before {
+  content: "01";
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+details[open] summary::before {
+  content: "01";
+}
