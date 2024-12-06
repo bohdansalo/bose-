@@ -3,14 +3,171 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/css.css" />
+    <title>FAQ Section</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        color: #fff;
+        padding: 20px;
+      }
+
+      .faq {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      details {
+        border-bottom: 1px solid #333;
+        margin-bottom: 15px;
+        padding: 10px 0;
+      }
+
+      summary {
+        font-size: 16px;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      summary:hover {
+        color: #1e90ff;
+      }
+
+      summary::marker {
+        display: none;
+      }
+
+      button.faq-button {
+        position: relative;
+        background: none;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        color: #fff;
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        outline: none;
+        transition: all 0.3s ease;
+      }
+
+      button.faq-button:hover {
+        background-color: #1e90ff;
+        color: #121212;
+        border-color: #1e90ff;
+      }
+
+      /* Tooltip */
+      button.faq-button::after {
+        content: "Натисни на мене";
+        position: absolute;
+        bottom: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #1e90ff;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      button.faq-button:hover::after {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .faq-answer {
+        display: none;
+        margin-top: 10px;
+        color: #aaa;
+      }
+
+      details[open] .faq-answer {
+        display: block;
+      }
+    </style>
   </head>
   <body>
-    <div class="con">
+    <div class="faq">
       <details>
-        <summary>How to pair with a mobile device?</summary>
-        <p>Follow the instructions provided in the manual.</p>
+        <summary>
+          01 How to pair with a mobile device?
+          <button
+            class="faq-button"
+            aria-label="Show hint"
+            onclick="this.closest('details').toggleAttribute('open')"
+          >
+            ?
+          </button>
+        </summary>
+        <div class="faq-answer">
+          To pair with a mobile device, turn on your headphones, enable
+          Bluetooth on your device, and select the Bose NC 700 from the
+          available devices list.
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          02 What is the wireless range of the Bose NC 700?
+          <button
+            class="faq-button"
+            aria-label="Show hint"
+            onclick="this.closest('details').toggleAttribute('open')"
+          >
+            ?
+          </button>
+        </summary>
+        <div class="faq-answer">
+          The wireless range of the Bose NC 700 headphones is up to 10 meters
+          (33 feet) in an open space.
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          03 How do I fold the Bose NC 700 headphones for storage?
+          <button
+            class="faq-button"
+            aria-label="Show hint"
+            onclick="this.closest('details').toggleAttribute('open')"
+          >
+            ?
+          </button>
+        </summary>
+        <div class="faq-answer">
+          The Bose NC 700 headphones do not fold completely but the earcups
+          rotate to lay flat for easy storage in the provided case.
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          04 Does the guarantee work internationally?
+          <button
+            class="faq-button"
+            aria-label="Show hint"
+            onclick="this.closest('details').toggleAttribute('open')"
+          >
+            ?
+          </button>
+        </summary>
+        <div class="faq-answer">
+          Yes, the guarantee works internationally, but terms and conditions may
+          vary depending on the region.
+        </div>
       </details>
     </div>
   </body>

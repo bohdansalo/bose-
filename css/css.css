@@ -1,6 +1,5 @@
-.con:hover {
-  color: red;
-  transition-duration: 250ms;
+body {
+  background-color: black;
 }
 summary {
   display: flex;
@@ -19,4 +18,14 @@ summary::before {
 
 details[open] summary::before {
   content: "01";
+}
+details {
+  color: rgb(165, 66, 66);
+  transition-duration: 250ms;
+}
+.con {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  transition-duration: 250ms;
 }
